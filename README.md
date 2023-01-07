@@ -1,5 +1,5 @@
 # CheapKuk Website
-#### Description: A flask-based website for my friends' small business that sells ready-to-cook meat products.
+#### A flask-based website for my friends' small business that sells ready-to-cook meat products.
 
 This project is a simple website that lets customers of CheapKuk order their ready-to-cook Filipino meat products in a very simple way. The shop has 4 products as of today: *Sirloin Garlic Tapa*, *Longganisang Hubad*, *Smoked Rub Liempo*, and *Chicken Adobo Flakes*. The structure of the whole website is inspired by the Finance problem set.
 
