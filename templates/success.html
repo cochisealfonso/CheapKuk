@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Success
+{% endblock %}
+
+{% block index %}
+
+    <div class="container overflow-hidden text-center col-sm-5">
+        <div class="row gx-5 gy-5">
+            <div class="col mb-5" style="background-color:#DAD8D4;">
+                <div class="p-1 fs-1 fw-bold lh-lg" style="font-family:Trebuchet MS">Thank you!</div>
+                <div class="p-1 fs-1 fw-bold lh-lg mb-5" style="font-family:Trebuchet MS">Your order has been placed!</div>
+                <div class="p-3 fs-0 fw-bold mb-5" style="font-family:Trebuchet MS; color:gray">Our team may contact you for further clarifications of your order details and personal information.</div>
+                <button class="btn btn-outline-danger col-12" type="button" disabled>You may now close this window</button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

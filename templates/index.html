@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block index %}
+    <form action="/" method="post" >
+        <div class="container overflow-hidden text-center col-sm-5">
+            <div class="row gx-5 gy-5">
+                <div class="col mb-5" style="background-color:#DAD8D4;">
+                    <div class="p-1 fs-1 fw-bold lh-lg" style="font-family:Trebuchet MS">Experience the Taste of Quality,</div>
+                    <div class="p-1 fs-1 fw-bold lh-lg mb-5" style="font-family:Trebuchet MS">Eat Cheap & Tasty</div>
+                    <div class="p-3 fs-0 fw-bold mb-5" style="font-family:Trebuchet MS; color:gray">Our products are sourced from top suppliers and manufacturers in the country, and we carefully curate our selection to bring you the best in taste, convenience, and nutrition.</div>
+                </div>
+            </div>
+        </div>
+        <div class="p-1 fs-3 fw-bold lh-lg mb-5 text-center" style="font-family:Trebuchet MS">Our Products</div>
+        <div class="container-sm overflow-hidden text-center mt-3 col-sm-7 reveal" style="font-family:Trebuchet MS">
+            <div class="row gx-5 gy-2 shadow-lg fw-bold">
+                <div class="col">
+                    <img src="/static/tapa.png" class="figure-img img-fluid rounded" alt="...">
+                    <div class="p-5 border-0 fw-bold rounded-top rounded-lg fs-5">Sirloin Garlic Tapa</div>
+                    <div class="p-3 border-0 fw-bold fs-5" style="color:gray" >250 Grams</div>
+                    <div class="row g-0 border-0">
+                        <div class="col-sm-6 col-md-6 p-1 border-end border-3">₱ 190.00</div>
+                        <div class="col-6 col-md-6 p-1"><button class="btn btn-secondary btn-sm" type="submit" name="button" id="button" value="1"><i data-feather="plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="col shadow-lg">
+                    <img src="/static/longganisa.png" class="figure-img img-fluid rounded" alt="...">
+                    <div class="p-5 border-0 fw-bold rounded-top rounded-lg fs-5">Longganisang Hubad</div>
+                    <div class="p-3 border-0 fw-bold fs-5" style="color:gray">250 Grams</div>
+                    <div class="row g-0">
+                        <div class="col-sm-6 col-md-6 p-1 border-end border-3">₱ 140.00</div>
+                        <div class="col-6 col-md-6 p-1"><button class="btn btn-secondary btn-sm" type="submit" name="button" id="button" value="2"><i data-feather="plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="/static/liempo.png" class="figure-img img-fluid rounded" alt="...">
+                    <div class="p-5 border-0 fw-bold rounded-top rounded-lg fs-5">Smoked Rub Liempo</div>
+                    <div class="p-3 border-0 fw-bold fs-5" style="color:gray">300 Grams</div>
+                    <div class="row g-0">
+                        <div class="col-sm-6 col-md-6 p-1 border-end border-3">₱ 170.00</div>
+                        <div class="col-6 col-md-6 p-1"><button class="btn btn-secondary btn-sm" type="submit" name="button" id="button" value="3"><i data-feather="plus"></i></button></div>
+                    </div>
+                </div>
+                <div class="col shadow-lg">
+                    <img src="/static/adobo_flakes.png" class="figure-img img-fluid rounded" alt="...">
+                    <div class="p-5 border-0 fw-bold rounded-top rounded-lg fs-5">Chicken Adobo Flakes</div>
+                    <div class="p-3 border-0 fw-bold fs-5" style="color:gray">180 Grams</div>
+                    <div class="row g-0">
+                        <div class="col-sm-6 col-md-6 p-1 border-end border-3">₱ 230.00</div>
+                        <div class="col-6 col-md-6 p-1"><button class="btn btn-secondary btn-sm" type="submit" name="button" id="button" value="4"><i data-feather="plus"></i></button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="/static/scripts.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace()
+    </script>
+
+
+{% endblock %}

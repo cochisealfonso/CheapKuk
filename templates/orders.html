@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Orders
+{% endblock %}
+
+{% block orders %}
+
+{% for customer in customers %}
+<table class="table table-striped fs-5">
+    <thead>
+        <tr>
+            <th scope="col">Customer</th>
+            <th scope="col">Address</th>
+            <th class="text-center" scope="col">Mobile Number</th>
+            <th class="text-center" scope="col">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in customerinfo %}
+        {% if row["customer_id"] == customer["customer_id"] %}
+        <tr>
+            <td>{{ row["first_name"] }} {{ row["last_name"] }}</td>
+            <td>{{ row["address"] }}, {{ row["city"] }}</td>
+            <td class="text-center">{{ row["mobile_number"] }}</td>
+            <td class="text-center">{{ row["date"] }}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        <tr>
+            <td colspan="4">
+                <table class="table table-hover fs-6 table-secondary">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product ID</th>
+                            <th class="text-center" scope="col">Amount</th>
+                            <th class="text-center" scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% set totals = 0 %}
+                        {% for row in orders %}
+                        {% if row["customer_id"] == customer["customer_id"] %}
+                        <tr>
+                            <td>{{ row["product_name"] }}</td>
+                            <td class="text-center">{{ row["amount"] }}</td>
+                            <td class="text-center">₱ {{ row["total"] }}.00</td>
+                        </tr>
+
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                    <tfoot class="fw-bold">
+                        <tr>
+                        </tr>
+                    </tfoot>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+{% endfor %}
+{% endblock %}

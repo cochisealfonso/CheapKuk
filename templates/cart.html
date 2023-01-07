@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Cart
+{% endblock %}
+
+{% block cart %}
+<form action="/cart" method="post">
+<table class="table table-hover fs-6">
+    <thead>
+        <tr>
+        <th scope="col">Product</th>
+        <th class="text-center" scope="col">Amount</th>
+        <th class="text-center" scope="col">Price</th>
+        <th class="text-center" scope="col">Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in rows %}
+        <tr>
+        <td>{{ row["Product"] }}</td>
+        <td class="text-center">{{ row["Amount"] }}</td>
+        <td class="text-center">₱ {{ row["Price"] }}.00</td>
+        <td class="text-center">₱ {{ row["Total"] }}.00</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot class="fw-bold">
+        <tr>
+        <td></td>
+        <td></td>
+        <td>Cart Total</td>
+        <td class="text-center">₱ {{ total_cart }}.00</td>
+        </tr>
+    </tfoot>
+</table>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button class="btn btn-secondary me-md-2 mb-2" type="button" onclick="javascript:history.back()" >Continue Shopping</button>
+  </div>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button class="btn btn-danger me-md-2 mb-2" type="submit" name="button" id="button" value="clear">Clear</button>
+  </div>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Checkout</button>
+  </div>
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 id="offcanvasRightLabel">Checkout</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+</form>
+    <form action="/cart" method="post">
+    <div class="offcanvas-body">
+        <!-- BODY OF CANVAS -->
+        {% for user in users %}
+        Full Name:  <p class="fw-bold"> {{ user.first_name }} {{ user.last_name }} </p><br>
+        Address:  <p class="fw-bold">{{ user.address }}, {{ user.city }} </p><br>
+        Mobile Number:  <p class="fw-bold">{{ user.mobile_number }} </p><br>
+        {% endfor %}
+        <table class="table table-hover fs-6">
+            <tbody>
+                <tr>
+                <td>Mode of Payment:</td>
+                <td class="fw-bold">CASH ON DELIVERY</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                <td>Amount to be Paid:</td>
+                <td class="text-center fw-bold">₱ {{ total_cart }}.00</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <button class="btn btn-success" type="submit" name="button" id="button" value="place_order" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Place Order</button>
+        </div>
+    </div>
+  </form>
+  </div>
+{% endblock %}

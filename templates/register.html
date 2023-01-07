@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post" class="needs-validation" novalidate>
+        <div class="mb-3 mt-5">""</div>
+        <!-- username -->
+        <div class="mb-3 mt-5">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <!-- password -->
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+        </div>
+         <!-- confirm password -->
+         <div class="mb-3">
+            <label for="confirmation" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmation" name="confirmation" placeholder="Re-enter Password" required>
+        </div>
+        {% block pass %}{% endblock %}
+        <!-- First and Last Name -->
+        <div class="row mb-3">
+            <label for="first-name" class="form-label">Name</label>
+            <div class="col">
+              <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First name" aria-label="First name" required>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last name" aria-label="Last name" required>
+            </div>
+        </div>
+        <!-- Address 1 -->
+        <div class="mb-3">
+            <label for="basic-url" class="form-label">Full Address</label>
+            <input type="text" class="form-control" id="street_address" name="street_address" placeholder="House No., Street" required>
+        </div>
+        <!-- Address 2 -->
+        <div class="mb-3">
+            <input type="text" class="form-control" id="city_address" name="city_address" placeholder="City" required>
+        </div>
+        <fieldset disabled>
+            <div class="mb-3">
+              <input type="text" id="disabledTextInput" class="form-control" placeholder="Metro Manila" required>
+            </div>
+        </fieldset>
+        <!-- Mobile Number -->
+        <label for="mobile" class="form-label">Mobile Number</label>
+        <div class="input-group mb-3">
+            <div class="input-group-text" id="mobile_addon">+63</div>
+            <input class="form-control mx-auto w-auto" id="mobile" name="mobile" placeholder="10-digit Number" type="text" required>
+          </div>
+        <button class="btn btn-primary col-12" type="submit">Register</button>
+    </form>
+
+    <script src="/static/scripts.js"></script>
+{% endblock %}
