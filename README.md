@@ -1,3 +1,4 @@
+Currently trying to optimize code...
 # CheapKuk Website
 #### A flask-based website for my friends' small business that sells ready-to-cook meat products.
 
